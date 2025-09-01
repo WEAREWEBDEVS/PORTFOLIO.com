@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elite Web Developers | Premium Website Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ===== GLOBAL STYLES ===== */
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #7c3aed;
+      --accent: #ec4899;
+      --dark: #1f2937;
+      --darker: #111827;
+      --light: #f9fafb;
+      --gray: #6b7280;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(-45deg, #1e1e2f, #2c3e50, #34495e, #1abc9c);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      color: white;
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background: var(--primary);
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      border: 2px solid var(--primary);
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: transparent;
+      color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      margin-left: 1rem;
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(124, 58, 237, 0.9) 100%), 
+                  url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .header-content {
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    #sona {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .about-text {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    /* ===== CARD STYLES ===== */
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      color: white;
+      transition: var(--transition);
+      margin-bottom: 2rem;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ===== SECTIONS ===== */
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: rgba(255, 153, 0, 0.989);
+      display: inline-block;
+    }
+
+    .section-title h2:after {
+      content: '';
+      display: block;
+      width: 50%;
+      height: 4px;
+      background: var(--accent);
+      margin: 10px auto;
+      border-radius: 2px;
+    }
+
+    /* Hyperlinks Section */
+    .hyperlinks {
+      background-color: rgba(0, 0, 0, 0.2);
+      padding: 4rem 0;
+    }
+
+    .link-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .link-list a {
+      padding: 0.8rem 1.5rem;
+      background: var(--primary);
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: var(--transition);
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-weight: 900;
+    }
+
+    .link-list a:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    /* Pricing Section */
+    .pricing {
+      background: linear-gradient(rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.2));
+      padding: 4rem 0;
+    }
+
+    .pricing ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      font-weight: 1000;
+    }
+
+    .pricing li {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition: var(--transition);
+      font-size: 1.2rem;
+    }
+
+    .pricing li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Custom pricing item colors */
+    .me {
+      background-color: goldenrod;
+      color: rgba(61, 165, 165, 0.906);
+    }
+
+    .tinkujiya {
+      color: blueviolet;
+      background-color: crimson;
+    }
+
+    .chand {
+      color: thistle;
+      background-color: greenyellow;
+    }
+
+    .monaismywife {
+      background-color: rgb(106, 255, 0);
+    }
+
+    .sonam {
+      background-color: aqua;
+      color: blanchedalmond;
+    }
+
+    /* Additional Info */
+    .additional-info {
+      text-align: center;
+      padding: 3rem 0;
+    }
+
+    .additional-info h6 {
+      color: rgb(59, 47, 47);
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    /* Footer Offer */
+    .footer-offer {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 2rem;
+      text-align: center;
+      margin: 2rem 0;
+      border-radius: 10px;
+    }
+
+    /* Premium Benefits */
+    .premium-benefits {
+      padding: 4rem 0;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .premium-benefits ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+      list-style: none;
+    }
+
+    .premium-benefits li {
+      padding: 1rem;
+      background: rgba(37, 99, 235, 0.1);
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .premium-benefits li:before {
+      content: "✓";
+      color: var(--success);
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    /* Team Info */
+    .team-info {
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .tech-description {
+      font-size: 1.3rem;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-weight: bolder;
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+
+    .suf {
+      background-color: blueviolet;
+      font-style: italic;
+      font-weight: bolder;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      color: blue;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 2rem;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background: var(--darker);
+      color: white;
+      padding: 4rem 0;
+    }
+
+    .testimonials blockquote {
+      font-style: italic;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      border-left: 4px solid var(--accent);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+    }
+
+    /* Pricing Calculator */
+    .pricing-calculator {
+      padding: 3rem 0;
+    }
+
+    .pricing-calculator label {
+      display: block;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      background: rgba(37, 99, 235, 0.1);
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .pricing-calculator input[type="checkbox"] {
+      margin-right: 0.5rem;
+    }
+
+    /* Live Preview */
+    .live-preview {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      padding: 3rem 0;
+    }
+
+    #htmlInput {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid var(--gray);
+      border-radius: 8px;
+      resize: vertical;
+      font-family: monospace;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    #previewFrame {
+      width: 100%;
+      height: 300px;
+      border: 2px solid var(--gray);
+      border-radius: 8px;
+      background: white;
+    }
+
+    /* SEO Badge */
+    .seo-badge {
+      padding: 3rem 0;
+    }
+
+    .seo-badge ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .seo-badge li {
+      padding: 1rem;
+      background: rgba(16, 185, 129, 0.1);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    /* Theme Toggle */
+    .theme-toggle {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    /* Timeline */
+    .timeline {
+      padding: 3rem 0;
+    }
+
+    .timeline ul {
+      list-style: none;
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline ul:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background: var(--primary);
+    }
+
+    .timeline li {
+      margin-bottom: 2rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .timeline li:before {
+      content: '';
+      position: absolute;
+      left: -0.5rem;
+      top: 0.3rem;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    /* Contact Form */
+    .contact-form {
+      padding: 3rem 0;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 2px solid var(--gray);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    .contact-form button {
+      width: 100%;
+    }
+
+    /* Chatbot Styles */
+    .chatbot-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 350px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      transform: translateY(calc(100% - 50px));
+    }
+
+    .chatbot-container.open {
+      transform: translateY(0);
+    }
+
+    .chatbot-header {
+      background: var(--primary);
+      color: white;
+      padding: 15px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chatbot-messages {
+      height: 300px;
+      padding: 15px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .message {
+      padding: 10px 15px;
+      border-radius: 18px;
+      max-width: 80%;
+      word-wrap: break-word;
+    }
+
+    .user-message {
+      background: var(--primary);
+      color: white;
+      align-self: flex-end;
+      border-bottom-right-radius: 5px;
+    }
+
+    .bot-message {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      align-self: flex-start;
+      border-bottom-left-radius: 5px;
+    }
+
+    .chatbot-input {
+      display: flex;
+      padding: 15px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .chatbot-input input {
+      flex: 1;
+      padding: 10px;
+      border: 2px solid var(--gray);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    .chatbot-input button {
+      margin-left: 10px;
+      padding: 10px 15px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    /* Grid Examples */
+    .gridbox {
+      border: 5px solid red;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background-color: aqua;
+    }
+
+    .fire {
+      border: 3px solid green;
+      padding: 1rem;
+      background-color: blanchedalmond;
+      color: black;
+      text-align: center;
+    }
+
+    .tinkeringlabs {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+      border: 4px solid red;
+      padding: 1rem;
+    }
+
+    .tinkeringlabs > div {
+      padding: 1rem;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    .differentgridcolumn1 { background-color: salmon; }
+    .differentgridcolumn2 { background-color: blueviolet; }
+    .differentgridcolumn3 { background-color: hotpink; }
+    .differentgridcolumn4 { background-color: aquamarine; }
+    .differentgridcolumn5 { background-color: chartreuse; }
+
+    .palpalnamane {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+      border: 2px solid maroon;
+      padding: 1rem;
+      background-color: blanchedalmond;
+    }
+
+    .palpalnamane > div {
+      height: 55px;
+      width: 60px;
+      border: 2px solid maroon;
+      background-color: chartreuse;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      color: black;
+    }
+
+    .soja {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      background-color: aquamarine;
+      border: 5px solid tan;
+      padding: 1rem;
+    }
+
+    .soja > div {
+      padding: 1rem;
+      background-color: darkturquoise;
+      border-radius: 8px;
+      text-align: center;
+      color: black;
+    }
+
+    /* Specific grid item styles */
+    .u { background-color: aquamarine; border: 1px solid; }
+    .r { background-color: bisque; }
+    .o { background-color: burlywood; }
+    .e { background-color: firebrick; color: white; }
+    .p { background-color: antiquewhite; }
+
+    /* Floating Icons */
+    .floating-icon {
+      position: absolute;
+      animation: float 6s infinite ease-in-out;
+      opacity: 0.1;
+      z-index: -1;
+      font-size: 2rem;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(10deg); }
+      100% { transform: translateY(0) rotate(0deg); }
+    }
+
+    /* Dark Mode */
+    .dark-mode {
+      background: #121212;
+      color: #f0f0f0;
+    }
+
+    .dark-mode .card {
+      background: rgba(30, 30, 30, 0.8);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      #sona {
+        font-size: 2.5rem;
+      }
+      
+      .about-text {
+        font-size: 1.2rem;
+      }
+      
+      .live-preview {
+        grid-template-columns: 1fr;
+      }
+      
+      .link-list {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .tinkeringlabs {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .gridbox {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .chatbot-container {
+        width: 90%;
+        right: 5%;
+        left: 5%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header monaismywife">
+    <div class="container header-content">
+      <h1 id="sona">WEB DEVELOPER PORTFOLIO</h1>
+      <h2 class="about-text">
+        ABOUT US: We are young web developers who use HTML, CSS, Python, JavaScript, MongoDB, Node.js, React — and we are at your service. Our team can make a simplistic yet superior website for you at a very reasonable price. We shall make you happy seeing the website.
+      </h2>
+      <a href="#contact" class="btn">Get Started</a>
+    </div>
+    
+    <!-- Floating Icons -->
+    <div class="floating-icon" style="top:10%; left:20%;">💻</div>
+    <div class="floating-icon" style="top:30%; left:60%;">⚙️</div>
+    <div class="floating-icon" style="top:50%; left:40%;">🌐</div>
+    <div class="floating-icon" style="top:70%; left:80%;">🚀</div>
+    <div class="floating-icon" style="top:85%; left:10%;">🔧</div>
+  </header>
+
+  <main class="container">
+    <!-- Hyperlinks Section -->
+    <section class="hyperlinks tinkujiya">
+      <div class="section-title">
+        <h2>Hyperlinks Made by Us</h2>
+      </div>
+      <nav class="link-list">
+        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.google.com" target="_blank"><i class="fab fa-google"></i> Google</a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      </nav>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+      <div class="section-title">
+        <h2>Our Pricing</h2>
+      </div>
+      <ul>
+        <li class="me">Contact: Use GitHub to contact us</li>
+        <li class="tinkujiya">Payment: ₹4999 for lifetime website</li>
+        <li class="chand">Yearly Subscription: ₹499 only</li>
+        <li class="monaismywife">Monthly Website: ₹89 only</li>
+        <li class="sonam">Weekly Website: ₹24 only</li>
+      </ul>
+    </section>
+
+    <!-- Additional Info -->
+    <section class="additional-info">
+      <p>Our knowledge of HTML and CSS ranks highest among most coders nowadays.</p>
+      <h6>Premium website keeps updating every month!</h6>
+    </section>
+
+    <!-- Footer Offer -->
+    <section class="footer-offer">
+      <p>Try PRO website for 3 months for ₹9 OR try FREE website for 1 month with premium and an Additional 2 months</p>
+    </section>
+
+    <!-- Premium Benefits -->
+    <section class="premium-benefits">
+      <div class="section-title">
+        <h2>Premium Website Benefits</h2>
+      </div>
+      <ul>
+        <li>Website updates every month</li>
+        <li>Gives faster and smoother access</li>
+        <li>Allows better functioning of business</li>
+        <li>Provides viewers with a better experience</li>
+        <li>Adds extra features to the website</li>
+        <li>Uses more tools to make the website interactive (e.g., JavaScript, Python, MongoDB, React)</li>
+        <li>Allows user to edit the website after it's made</li>
+        <li>Free-form user creation of content</li>
+      </ul>
+    </section>
+
+    <!-- Team Info -->
+    <section class="team-info">
+      <p>Members: 1</p>
+      <h6>This website was made using HTML and CSS</h6>
+      <div class="tech-description">
+        HTML: Used to design a basic layout for your website<br />
+        CSS: Used to make your website editable<br />
+        JavaScript: Used for further coding of your website's services to make it smart and self-sufficient
+      </div>
+      <h5 class="suf">
+        Other tools such as React, MongoDB, Node.js, advanced JavaScripting are used only for premium websites.
+      </h5>
+    </section>
+
+    <!-- JavaScript Card -->
+    <section class="card skill-card">
+      <h4 onclick="toggleJSInfo()" style="cursor:pointer;">JavaScript</h4>
+      <p>Click to see how we use JS to make websites dynamic</p>
+      <div id="jsInfo" style="display:none;">
+        <p>We use JavaScript to add interactivity, animations, and smart features like calculators, live previews, and chatbots. It makes your website dynamic and responsive to user actions.</p>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <blockquote>"They made my site in 2 days. Super clean!" – UNKNOWN CLIENT</blockquote>
+    </section>
+
+    <!-- Pricing Calculator -->
+    <section class="pricing-calculator card">
+      <h3>Customize Your Website</h3>
+      <label><input type="checkbox" value="499" onchange="updatePrice()"> Blog Feature (₹499)</label><br>
+      <label><input type="checkbox" value="299" onchange="updatePrice()"> Contact Form (₹299)</label><br>
+      <label><input type="checkbox" value="999" onchange="updatePrice()"> Premium Design (₹999)</label><br>
+      <label><input type="checkbox" value="9.99" onchange="updatePrice()"> MONTHLY STYLE CUSTOMIZATION($9.99)</label><br>
+      <h4>Total Price: ₹<span id="total">0</span></h4>
+    </section>
+
+    <!-- Live Preview -->
+    <section class="live-preview card">
+      <h3>Try HTML Live</h3>
+      <textarea id="htmlInput" rows="6" cols="40" placeholder="Type HTML here..."></textarea>
+      <iframe id="previewFrame" style="width:100%; height:200px; border:1px solid #ccc;"></iframe>
+    </section>
+
+    <!-- SEO Badge -->
+    <section class="seo-badge card">
+      <h3>Why Choose Us?</h3>
+      <ul>
+        <li>⚡ Lightning Fast Load Times</li>
+        <li>🔍 SEO Optimized for Google</li>
+        <li>📱 Mobile-Friendly Design</li>
+      </ul>
+    </section>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+      <button onclick="toggleTheme()" class="btn">Toggle Dark/Light Mode</button>
+    </div>
+
+    <!-- Timeline -->
+    <section class="timeline card">
+      <h3>Our Journey</h3>
+      <ul>
+        <li><strong>2024:</strong> Started learning HTML & CSS</li>
+        <li><strong>2025:</strong> First client project completed</li>
+        <li><strong>2026:</strong> Launch of Premium Website Service</li>
+      </ul>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form card" id="contact">
+      <h3>Contact Us</h3>
+      <form onsubmit="sendMessage(event)">
+        <input type="text" placeholder="Your Name" required><br>
+        <input type="email" placeholder="Your Email" required><br>
+        <textarea placeholder="Your Message" required></textarea><br>
+        <button type="submit" class="btn">Send</button>
+      </form>
+      <p id="replyMessage" style="display:none;">Thanks! We'll reply within 24 hours.</p>
+    </section>
+
+    <!-- Grid Examples -->
+    <div class="gridbox">
+      <div class="fire">hello</div>
+      <div class="fire">this</div>
+      <div class="fire">is a grid</div>
+      <div class="fire">made by us and</div>
+      <div class="fire">our team</div>
+      <div class="fire">it is used for </div>
+      <div class="fire">making navbar</div>
+      <div class="fire">for your website</div>
+      <div class="sonam">THIS</div>
+      <div class="sonam">IS</div>
+      <div class="sonam">A</div>
+      <div class="sonam">DIFFERENT</div>
+      <div class="sonam">COLOUR</div>
+      <div class="sonam">OF</div>
+      <div class="sonam">BORDER</div>
+      <div class="sonam">OF WEBSITE</div>
+    </div>
+
+    <div class="tinkeringlabs">
+      <div class="differentgridcolumn1">yo</div>
+      <div class="differentgridcolumn2">THIS IS</div>
+      <div class="differentgridcolumn3">ANOTHER DIFFERENT</div>
+      <div class="differentgridcolumn4">GRID COLUMN</div>
+      <div class="differentgridcolumn5">MADE BY OUR TEAM</div>
+    </div>
+
+    <div class="palpalnamane">
+      <H6>special shoutouts to our local collaborators!</H6>
+      <div class="M m1">THIS</div>
+      <div class="M m2">IS</div>
+      <div class="M m3">A</div>
+      <div class="M m4">GRID</div>
+      <div class="M m5">BOX</div>
+      <div class="M m6">WITH</div>
+      <div class="M m7">55</div>
+      <div class="M m8">HEIGHT</div>
+      <div class="M m9">60</div>
+      <div class="M m10">BREADTH</div>
+      <div class="M m11">AND 2px SOLID MAROON</div>
+      <div class="M m12">COLOUR BORDER</div>
+      <div class="M m13">JUST FOR YOUR WEBSITE</div>
+      <div class="M">WITH BACKGROUN COLOR CHARTREUSE</div>
+    </div>
+
+    <div class="soja">
+      <div class="sui e">LETS USE GRID TECH</div>
+      <div class="sui r">TO MAKE A CUSTOMIZED</div>
+      <div class="sui t">GRIDBOX FOR YOU</div>
+      <div class="sui o">THAT HAS DIFFERENT PATTERNS</div>
+      <div class="sui">according to</div>
+      <div class="sui u">you</div>
+      <div class="sui p">and your</div>
+      <div class="sui">suitable design</div>
+      <div class="sui">that helps you accomplish</div>
+      <div class="sui w">your goals of a better BUISNESS/JOB EXPERIENCE</div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background: var(--darker); color: white; text-align: center; padding: 3rem 0; margin-top: 3rem;">
+    <p>© 2023 Elite Web Developers. All rights reserved.</p>
+  </footer>
+
+  <!-- Chatbot -->
+  <div class="chatbot-container" id="chatbot">
+    <div class="chatbot-header" onclick="toggleChatbot()">
+      <h3>Talk to Our Bot</h3>
+      <span id="chatbot-toggle">↑</span>
+    </div>
+    <div class="chatbot-messages" id="chatbot-messages">
+      <div class="message bot-message">Hello! How can I help you today?</div>
+    </div>
+    <div class="chatbot-input">
+      <input type="text" id="chatbot-input" placeholder="Ask something...">
+      <button onclick="sendChatMessage()">Send</button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Toggle JavaScript info
+    function toggleJSInfo() {
+      const info = document.getElementById('jsInfo');
+      info.style.display = info.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // Update pricing calculator
+    function updatePrice() {
+      const checkboxes = document.querySelectorAll('.pricing-calculator input[type="checkbox"]');
+      let total = 0;
+      checkboxes.forEach(cb => { if (cb.checked) total += parseFloat(cb.value); });
+      document.getElementById('total').textContent = total;
+    }
+
+    // Live HTML preview
+    document.getElementById('htmlInput').addEventListener('input', function () {
+      document.getElementById('previewFrame').srcdoc = this.value;
+    });
+
+    // Toggle theme
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    // Contact form submission
+    function sendMessage(e) {
+      e.preventDefault();
+      document.getElementById('replyMessage').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('replyMessage').style.display = 'none';
+      }, 5000);
+    }
+
+    // Chatbot functionality
+    function toggleChatbot() {
+      const chatbot = document.getElementById('chatbot');
+      const toggleIcon = document.getElementById('chatbot-toggle');
+      
+      chatbot.classList.toggle('open');
+      toggleIcon.textContent = chatbot.classList.contains('open') ? '↓' : '↑';
+    }
+
+    function sendChatMessage() {
+      const input = document.getElementById('chatbot-input');
+      const message = input.value.trim();
+      
+      if (message) {
+        // Add user message
+        addChatMessage(message, 'user');
+        
+        // Clear input
+        input.value = '';
+        
+        // Simulate bot response
+        setTimeout(() => {
+          let botResponse = "I'm not sure how to respond to that. Can you try asking about our services, pricing, or portfolio?";
+          
+          if (message.toLowerCase().includes('price') || message.toLowerCase().includes('cost')) {
+            botResponse = "Our pricing starts at just ₹24 for a weekly website, ₹89 monthly, ₹499 yearly, or ₹4999 for a lifetime website!";
+          } else if (message.toLowerCase().includes('service') || message.toLowerCase().includes('what do you do')) {
+            botResponse = "We create beautiful, responsive websites using HTML, CSS, JavaScript, and other modern technologies. We specialize in creating custom solutions for businesses of all sizes.";
+          } else if (message.toLowerCase().includes('portfolio') || message.toLowerCase().includes('work')) {
+            botResponse = "You're looking at our portfolio right now! This website was built by us to showcase our skills. We can create something similar or even better for your business.";
+          } else if (message.toLowerCase().includes('contact') || message.toLowerCase().includes('how to reach')) {
+            botResponse = "You can contact us through GitHub or use the contact form on this page. We typically respond within 24 hours.";
+          } else if (message.toLowerCase().includes('hello') || message.toLowerCase().includes('hi')) {
+            botResponse = "Hello there! Thanks for reaching out. How can I help you today?";
+          }
+          
+          addChatMessage(botResponse, 'bot');
+        }, 1000);
+      }
+    }
+
+    function addChatMessage(message, sender) {
+      const messagesContainer = document.getElementById('chatbot-messages');
+      const messageElement = document.createElement('div');
+      messageElement.classList.add('message');
+      messageElement.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+      messageElement.textContent = message;
+      
+      messagesContainer.appendChild(messageElement);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    // Allow sending message with Enter key
+    document.getElementById('chatbot-input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        sendChatMessage();
+      }
+    });
+
+    // Initial alert
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        alert("YOU WILL NOT NEED ANOTHER WEBSITE MAKER. YOU MAY PROCEED to get your own PERSONALIZED website.");
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
